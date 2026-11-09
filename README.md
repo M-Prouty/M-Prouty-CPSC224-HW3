@@ -1,3 +1,3 @@
 Name: Mac Prouty; 
 Class: CPSC224 Fall 2026; 
-Current assignment: HW2
+Current assignment: HW3
