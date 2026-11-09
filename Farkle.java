@@ -1,3 +1,10 @@
+/* 
+Homework 3
+CPSC224
+11/8/2026
+Author: Mac Prouty
+*/
+
 import java.util.*;
 
 public class Farkle {
@@ -15,7 +22,7 @@ public class Farkle {
         boolean endGame = false;
         int endGameStarter = -1;
         input.nextLine();
-        if (winNum == 0) {
+        if (winNum <= 0) {
             winNum = 10000;
         }
         System.out.println();
@@ -92,7 +99,7 @@ public class Farkle {
 
     public static String getNameViaAsking(Scanner sName) {
         String name = sName.nextLine();
-        if (name.equals("")) {
+        if (name.isEmpty()) {
             name = "Unknown Player";
         }
         else {
@@ -111,12 +118,16 @@ public class Farkle {
         }
         sName.nextLine();
         System.out.println();
+        ArrayList<String> defaultNames = new ArrayList<>
+        (Arrays.asList("Jennifer", "Tom", "Malcolm", "Oliver", "Madeline",
+        "Spencer", "Molly", "Artemis", "Asa", "Bianca", "Theo", "Daniel", 
+        "Atticus", "Andrew", "Savannah", "Charlotte", "David", "Lily"));
         for (int i = 0; i < numPlayers; i++) {
             System.out.print("What is player #" + (i + 1) + "'s name? ");
+            System.out.println("If you would like to be assigned a default name, hit enter  ");
             String name = getNameViaAsking(sName);
-            while (playerNames.contains(name)) {
-                System.out.println("Please enter a unique name. ");
-                name = getNameViaAsking(sName);
+            if (name.equalsIgnoreCase("Unknown Player")) {
+                name = defaultNames.get(i % defaultNames.size());
             }
             playerNames.add(name);
             Player p = new Player(new Hand(6, 6), name);
