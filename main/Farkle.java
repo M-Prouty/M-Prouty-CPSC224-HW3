@@ -22,7 +22,6 @@ public class Farkle {
         int winNum = input.nextInt();
         boolean endGame = false;
         int endGameStarter;
-        endGameStarter = -1;
         input.nextLine();
         if (winNum <= 0) {
             winNum = 10000;

@@ -10,7 +10,7 @@ public class Dice {
     }
 
     public Dice(int numSides){
-        if (numSides < 1) {
+        if (numSides < 2) {
             System.out.println("Invalid number of sides.");
             System.out.println("Sides set to 2.");
             this.numSides = 2;
@@ -19,6 +19,18 @@ public class Dice {
             this.numSides = numSides;
         }
         this.sideUp = (int) (Math.random() * numSides) + 1;
+    }
+
+    public Dice(int numSides, int sideUp){
+        if (numSides < 2) {
+            System.out.println("Invalid number of sides.");
+            System.out.println("Sides set to 2.");
+            this.numSides = 2;
+        }
+        else {
+            this.numSides = numSides;
+        }
+        this.sideUp = sideUp;
     }
 
     public int getSideUp() {
@@ -34,7 +46,12 @@ public class Dice {
     }
 
     public void setNumSides(int newNumSides) {
-        this.numSides = newNumSides;
+        if (newNumSides < 2) {
+            this.numSides = 2;
+        }
+        else {
+            this.numSides = newNumSides;
+        }
     }
 
     public void roll() {
