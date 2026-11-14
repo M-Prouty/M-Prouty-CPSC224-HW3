@@ -1,3 +1,5 @@
+package main;
+
 public class Dice {
     private int numSides;
     private int sideUp;

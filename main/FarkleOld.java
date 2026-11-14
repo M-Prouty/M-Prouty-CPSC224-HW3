@@ -1,3 +1,4 @@
+package main;
 import java.util.*;
 
 public class FarkleOld {
@@ -40,5 +41,6 @@ public class FarkleOld {
             System.out.println();
         }
         System.out.println("Thank you for playing, " + name + "! You earned " + points + " points.");
+        input.close();
     }
 }

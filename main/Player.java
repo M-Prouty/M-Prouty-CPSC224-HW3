@@ -1,3 +1,4 @@
+package main;
 public class Player {
     private Hand hand;
     private String name;

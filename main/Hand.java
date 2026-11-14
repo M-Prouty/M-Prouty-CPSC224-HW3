@@ -1,3 +1,4 @@
+package main;
 import java.util.*;
 
 public class Hand {
@@ -392,9 +393,11 @@ public class Hand {
             }
             this.numDiceNotSaved = 6 - listOfSavedDice.size();
             if (listOfSavedDice.size() > 6) {
+                input.close();
                 throw new IllegalStateException("Too many saved dice");
             }
             System.out.println("You earned " + points + " points this round!");
+            input.close();
             return points;
         }
         else {

@@ -5,6 +5,7 @@ CPSC224
 Author: Mac Prouty
 */
 
+package main;
 import java.util.*;
 
 public class Farkle {
@@ -20,7 +21,8 @@ public class Farkle {
         System.out.print("How many points would you like to play in this game? ");
         int winNum = input.nextInt();
         boolean endGame = false;
-        int endGameStarter = -1;
+        int endGameStarter;
+        endGameStarter = -1;
         input.nextLine();
         if (winNum <= 0) {
             winNum = 10000;
